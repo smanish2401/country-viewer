@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
-  isLoading:boolean=false
+  isLoading:boolean=false;
+  dataSource:any=[];
+  error:any;
+  
   constructor(private data:DataService, route:Router) {}
 
   ngOnInit(): void{
@@ -18,8 +21,22 @@ export class HomeComponent {
       
     }
 onFetchdata() {
-  this.data.getAllCountries().subscribe((res)=>{
-    console.log(res)
+  this.isLoading=true
+  this.data.getAllCountries().subscribe((result)=>{
+    console.log(result);
+    if(result){
+      this.dataSource=result;
+      this.data.dataSource=this.dataSource;
+      
+      setTimeout(() => {
+        this.isLoading=false
+      }, 2000);
+    }
+    else{
+      this.error="Error 404 ! Try again after some time"
+      
+    }
+    
   })
   
 }

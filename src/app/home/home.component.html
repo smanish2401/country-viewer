@@ -6,7 +6,7 @@
     </div>
 
 </div>
-<div class="my-table" >
+<div class="my-table" *ngIf="!isLoading">
     <div class="row">
         <div class="col-md-6" style="display: flex;">
             <div class="input-group mb-3">
@@ -31,6 +31,11 @@
             </select>
 
         </div>
+        
 
     </div>
+    <ng-container>
+        <th>Symbol</th>
+        <td>IN</td>
+     </ng-container>
 
