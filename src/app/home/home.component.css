@@ -1,0 +1,6 @@
+.myprogress{
+    display: flex;
+    padding-top: 250px;
+    flex-direction: column;
+    align-items: center;
+}

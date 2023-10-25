@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="myprogress" *ngIf="isLoading">
+    <div><mat-spinner [diameter]="40"></mat-spinner></div>
+    <div>
+        <p style="color: cadetblue;">One moment please</p>
+    </div>
+
+</div>
+<div class="my-table" >
+    <div class="row">
+        <div class="col-md-6" style="display: flex;">
+            <div class="input-group mb-3">
+                <input type="text" placeholder="Search" class="form-control" aria-label="Recipient's user name"
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="onPress()">Search</button>
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <select class="form-select" aria-label="default select example">
+                <option selected>Filter Based on Content</option>
+                <option value="Asia">Asia</option>
+                <option value="North America">North America</option>
+                <option value="Africa">Africa</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Antarctica">Antarctica</option>
+                <option value="South America">South America</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
