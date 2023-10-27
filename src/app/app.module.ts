@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    HttpClientModule 
+    HttpClientModule,
+    MatTableModule ,
+    MatInputModule,
+    FormsModule ,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,10 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  
+  displayedColumns: string[] = ['symbol','flag', 'name','continents','population','area'];
   isLoading:boolean=false;
   dataSource:any=[];
+  allCountries:any=[];
   error:any;
+  searchText:any;
   
   constructor(private data:DataService, route:Router) {}
 
@@ -33,10 +36,26 @@ onFetchdata() {
       }, 2000);
     }
     else{
+      
       this.error="Error 404 ! Try again after some time"
       
     }
     
+  })
+  
+
+}
+onPress(){
+  this.data.getSearchByName(this.searchText).subscribe((result)=>{
+    if(result){
+      console.warn(result)
+      this.dataSource=result
+    }
+    else{
+      console.warn("error");
+      this.onFetchdata()
+    }
+   
   })
   
 }
@@ -45,3 +64,5 @@ onFetchdata() {
 
 
 }
+
+

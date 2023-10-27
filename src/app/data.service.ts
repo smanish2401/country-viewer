@@ -14,6 +14,9 @@ export class DataService {
     return this.http.get(this.apiUrl +'all' )
     
   }
+  getSearchByName(name:string){
+    return this.http.get(this.apiUrl +'name/' +name )
+  }
   
   
   
