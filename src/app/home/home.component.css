@@ -15,3 +15,11 @@
 mat-table{
     width: 100%;
 }
+.head{
+    color: darkslateblue;
+}
+.mat-mdc-table mat-row.mat-mdc-row:hover {
+   
+    
+    background-color: rgb(229, 224, 222)
+}

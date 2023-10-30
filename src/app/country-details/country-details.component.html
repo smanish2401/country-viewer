@@ -1,1 +1,67 @@
-<app-header></app-header>
+<div>
+  <app-header></app-header>
+</div>
+<div class="myprogress" *ngIf="isLoading">
+  <div><mat-spinner [diameter]="40"></mat-spinner></div>
+  <div>
+    <p style="color: cadetblue">One Moment Please!!</p>
+  </div>
+  <div>
+    <P style="color: cadetblue">Getting your Country details...</P>
+  </div>
+</div>
+<div class="container" *ngIf="!isLoading">
+  <div class="row">
+    <div class="col-md-6 mydiv">
+      <img [src]="dataSource.flags.png" alt="dataSource.flags.alt" />
+
+    </div>
+    <div class="col-md-5 mydiv2">
+      <p class="details">Country-Details</p>
+
+      <div class="table-responsive">
+        <table class="table align-middle table-borderless">
+          <tbody>
+            <tr *ngIf="dataSource.name.common">
+              <th scope="row">Country Name :</th>
+              <td class="data">{{dataSource.name.common}}</td>
+            </tr>
+            <tr *ngIf="dataSource.area">
+              <th scope="row">Country Area :</th>
+              <td class="data">{{dataSource.area}} km²</td>
+            </tr>
+            <tr *ngIf="dataSource.population">
+              <th scope="row">Country Population :</th>
+              <td class="data">{{dataSource.population}}</td>
+            </tr>
+            <tr *ngIf="dataSource.capital[0]">
+              <th scope="row">Capital :</th>
+              <td class="data">{{dataSource.capital[0]}}</td>
+            </tr>
+            <tr *ngIf="dataSource.continents[0]">
+              <th scope="row">Continent :</th>
+              <td class="data">{{dataSource.continents[0]}}</td>
+            </tr>
+            <tr *ngIf="dataSource.coatOfArms &&(dataSource.coatOfArms.svg)">
+              <th scope="row">Country Coat Of Arms :</th>
+              <td class="data"><img [src]="dataSource.coatOfArms.svg" width="70px" height="70px" alt=""></td>
+            </tr>
+            <tr *ngIf="dataSource.borders && dataSource.borders.length>0 ">
+              <th scope="row">Neighbour Countries :</th>
+              <td class="data">{{dataSource.borders}}</td>
+            </tr>
+            
+            <tr *ngIf="dataSource.independent">
+              <th scope="row">Independent Country :</th>
+              <td class="data">{{dataSource.independent ? 'Yes':'No'}}</td>
+            </tr>
+            
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
