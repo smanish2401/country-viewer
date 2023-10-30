@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
@@ -7,20 +7,21 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   
-  displayedColumns: string[] = ['symbol','flag', 'name','continents','population','area'];
+  displayedColumns: string[] = ['symbol','flag', 'name','continents','population','area','button'];
   isLoading:boolean=false;
   dataSource:any=[];
   allCountries:any=[];
   error:any;
   searchText:any;
   
-  constructor(private data:DataService, route:Router) {}
+  
+  constructor(private data:DataService, private route:Router) {}
 
   ngOnInit(): void{
    this.onFetchdata()
-    
+   
       
     }
 onFetchdata() {
@@ -59,6 +60,11 @@ onPress(){
   })
   
 }
+onClickCountry(element:any){
+  this.data.dataSource=element;
+  this.route.navigate(['country',element.flag])
+  }
+
 
   
 

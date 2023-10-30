@@ -3,41 +3,48 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { MatButtonModule } from '@angular/material/button';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { HeaderComponent } from './header/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CountryDetailsComponent } from './country-details/country-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    FooterComponent,
     HomeComponent,
-    FooterComponent
+    CountryDetailsComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    NgbModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
     HttpClientModule,
-    MatTableModule ,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    // FlexLayoutModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatTooltipModule,
+    MatTooltipModule,
+    MatTooltipModule,
     MatInputModule,
-    FormsModule ,ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
