@@ -17,7 +17,9 @@ export class DataService {
   getSearchByName(name:string){
     return this.http.get(this.apiUrl +'name/' +name )
   }
-  
+  getSearchByRegion(region:string){
+    return this.http.get(this.apiUrl +'region/' +region)
+  }
   
   
 

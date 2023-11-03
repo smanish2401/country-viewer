@@ -1,6 +1,7 @@
 .example-spacer{
     flex: 1 1 auto;
     color:darkslateblue;
+    text-decoration: none;
 }
 .toolbar{
     color:darkslateblue;

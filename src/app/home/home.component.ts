@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit{
   allCountries:any=[];
   error:any;
   searchText:any;
+  region:any;
   
   
   constructor(private data:DataService, private route:Router) {}
@@ -70,7 +71,4 @@ onClickCountry(element:any){
 
   
 
-
 }
-
-
