@@ -69,6 +69,18 @@ onClickCountry(element:any){
   }
 
 
-  
+  onChange(event:any){
+let val = event.target.value
+if(val==="Filter Based on Continents"){
+  this.onFetchdata()
+}
+else{
+  this.data.getSearchByRegion(val).subscribe((result)=>{
+    console.warn(result)
+    this.dataSource=result
+    
+  })
+}
+  }
 
 }
